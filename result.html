@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>검사 결과</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>검사 결과</h2>
+    <table class="result-table">
+        <tr>
+            <th>파일명</th>
+            <th>탐지된 민감정보</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result.filename }}</td>
+            <td>{{ result.detected_info }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">파일 업로드</a>
+</body>
+</html>
